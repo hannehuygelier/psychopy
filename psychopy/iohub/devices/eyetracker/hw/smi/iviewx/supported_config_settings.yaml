@@ -1,5 +1,5 @@
 eyetracker.hw.smi.iviewx.EyeTracker:
-    name: 
+    name:
         IOHUB_STRING:
             min_length: 1
             max_length: 32
@@ -8,28 +8,28 @@ eyetracker.hw.smi.iviewx.EyeTracker:
     save_events: IOHUB_BOOL
     stream_events: IOHUB_BOOL
     auto_report_events: False
-    event_buffer_length: 
+    event_buffer_length:
         IOHUB_INT:
-            min: 1  
+            min: 1
             max: 2048
-    monitor_event_types:           
+    monitor_event_types:
         IOHUB_LIST:
             valid_values: [ MonocularEyeSampleEvent, BinocularEyeSampleEvent, FixationStartEvent, FixationEndEvent, SaccadeStartEvent, SaccadeEndEvent, BlinkStartEvent, BlinkEndEvent]  
             min_length: 0
-            max_length: 8            
-    model_name: 
+            max_length: 8
+    model_name:
         IOHUB_LIST:
             valid_values: [NONE, RED, REDm, HiSpeed, MRI, HED, ETG, Custom]
             min_length: 1
-            max_length: 1            
+            max_length: 1
     manufacturer_name: SensoMotoric Instruments GmbH
     calibration:
-        type: 
+        type:
             IOHUB_LIST:
                 valid_values: [ NO_POINTS,ONE_POINT,TWO_POINTS,FIVE_POINTS,NINE_POINTS,THIRTEEN_POINTS ]
                 min_length: 0
-                max_length: 1            
-        graphics_env: INTERNAL                  
+                max_length: 1
+        graphics_env: INTERNAL
         auto_pace: IOHUB_BOOL
         pacing_speed: [ SLOW, FAST ]
         screen_background_color:
@@ -41,7 +41,7 @@ eyetracker.hw.smi.iviewx.EyeTracker:
             target_size:
                 IOHUB_INT:
                     min: 2
-                    max: 1024             
+                    max: 1024
             target_color:
                 IOHUB_INT:
                     min: 0
@@ -59,14 +59,14 @@ eyetracker.hw.smi.iviewx.EyeTracker:
         # IP address of iView X computer
         send_ip_address: IOHUB_IP_ADDRESS_V4
         # Port being used by iView X SDK for sending data to iView X 
-        send_port: 
+        send_port:
             IOHUB_INT:
                 min: 1
                 max: 9999
         # IP address of local computer
         receive_ip_address: IOHUB_IP_ADDRESS_V4
         # port being used by iView X SDK for receiving data from iView X
-        receive_port: 	            
+        receive_port:
             IOHUB_INT:
                 min: 1
                 max: 9999
@@ -84,7 +84,7 @@ eyetracker.hw.smi.iviewx.EyeTracker:
                 IOHUB_LIST:
                     valid_values:  [FILTER_LEVEL_OFF, FILTER_OFF, FILTER_LEVEL_1, FILTER_ON] 
                     min_length: 1
-                    max_length: 1            
+                    max_length: 1
         # The iViewX supports the following track_eyes values:  
         # LEFT_EYE, RIGHT_EYE, BINOCULAR, BINOCULAR_AVERAGED, BINOCULAR_CUSTOM
         track_eyes: [LEFT_EYE, RIGHT_EYE, BINOCULAR, BINOCULAR_AVERAGED, BINOCULAR_CUSTOM]
@@ -110,8 +110,8 @@ eyetracker.hw.smi.iviewx.EyeTracker:
     software_version:
         IOHUB_STRING:
             min_length: 1
-            max_length: 8    
-    hardware_version: 
+            max_length: 8
+    hardware_version:
         IOHUB_STRING:
             min_length: 1
             max_length: 8
@@ -119,4 +119,3 @@ eyetracker.hw.smi.iviewx.EyeTracker:
         IOHUB_STRING:
             min_length: 1
             max_length: 8
-

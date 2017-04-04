@@ -22,10 +22,10 @@ eyetracker.hw.smi.iviewx.EyeTracker:
 
     # The iViewX implementation of the common eye tracker interface supports the
     # following event types:
-    # MonocularEyeSampleEvent, BinocularEyeSampleEvent, FixationStartEvent, FixationEndEvent  
-    # If you would like to exclude certain events from being saved or streamed during runtime, 
+    # MonocularEyeSampleEvent, BinocularEyeSampleEvent, FixationStartEvent, FixationEndEvent
+    # If you would like to exclude certain events from being saved or streamed during runtime,
     # remove them from the list below.
-    monitor_event_types: [ BinocularEyeSampleEvent, MonocularEyeSampleEvent]
+    monitor_event_types: [ BinocularEyeSampleEvent, MonocularEyeSampleEvent, FixationStartEvent, FixationEndEvent]
 
     # The iViewX network settings specify the pyViewX computer IIP and port and the
     # iViewX Apllication / Server Computer IP and port. By default the configuration
@@ -37,16 +37,16 @@ eyetracker.hw.smi.iviewx.EyeTracker:
         # IP address of local computer
         receive_ip_address: 127.0.0.1
         # port being used by iView X SDK for receiving data from iView X
-        receive_port: 5555	            
+        receive_port: 5555
 
     runtime_settings:
 
         # The iViewX supports, dependent on 
         # model and mode, sampling rates of 50, 60, 120, 240, 200, 250, 350, 500, and 1250 Hz
         # This is a READ-ONLY parameter with this implementation; it will be set at runtime by the iViewX system.
-        sampling_rate: 60
+        sampling_rate: 250
 
-        # The iViewX supports the following track_eyes values:  
+        # The iViewX supports the following track_eyes values:
         # LEFT_EYE, RIGHT_EYE, BINOCULAR, BINOCULAR_AVERAGED
         track_eyes: BINOCULAR_AVERAGED
 
@@ -54,11 +54,11 @@ eyetracker.hw.smi.iviewx.EyeTracker:
         # Sample stream type 'FILTER_ALL' with a filter level of either
         # FILTER_OFF or FILTER_ON
         sample_filtering:
-            FILTER_ALL: FILTER_OFF            
+            FILTER_ALL: FILTER_OFF
 
         # VOG settings allow you to specify some eye tracker parameters related to
         # the image processing or data collection procedure used by the eye tracker
-        # device. 
+        # device.
         vog_settings:
             # The iViewX supports one pupil_measure_types parameter that is used
             # for any eyes being tracked. PUPIL_AREA, PUPIL_DIAMETER are
@@ -67,7 +67,7 @@ eyetracker.hw.smi.iviewx.EyeTracker:
             pupil_measure_types: PUPIL_DIAMETER
 
     calibration:
-        # iViewX supports the following calibration type constants: 
+        # iViewX supports the following calibration type constants:
         type: NINE_POINTS
 
         # auto_pace can be True or False. If True, the eye tracker will 
@@ -77,19 +77,19 @@ eyetracker.hw.smi.iviewx.EyeTracker:
         auto_pace: Yes
 
         # pacing_speed represents how long a calibration point should
-        # be displayed before moving onto the next point when auto_pace 
+        # be displayed before moving onto the next point when auto_pace
         # is set to true. iViewX supports two values for this field: FAST and SLOW
         # If auto_pace is False, pacing_speed is ignored.
         pacing_speed: SLOW
 
-        # For the iView system, screen_background_color specifies a greyscale 
+        # For the iView system, screen_background_color specifies a greyscale
         # value (0 - 255) that gets used to dpecify the brightness of the calibration screen.
         screen_background_color: 20
 
         # target type defines what form of calibration graphic should be used
         # during calibration, validation, etc. modes.
         # The iView ioHub eye tracker implementation supports the following
-        # target types CIRCLE_TARGET, CROSSHAIR_TARGET, IMAGE_TARGET      
+        # target types CIRCLE_TARGET, CROSSHAIR_TARGET, IMAGE_TARGET
         target_type: CIRCLE_TARGET
         
         # The asociated target attributes sub properties must be supplied
